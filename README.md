@@ -21,7 +21,7 @@ A Simple Currency Converter using the JSON fixer API. Support for CAD,USD,EUR cu
 
 4. `npm start`
 
-5. `http://localhost:4200/`
+5. `Execute URL : http://localhost:4200/`
 
 
 ### Features Included
@@ -29,8 +29,8 @@ A Simple Currency Converter using the JSON fixer API. Support for CAD,USD,EUR cu
 ```
 1. Custom decimal validation
 2. Responsive design
-3. API outage error message
-4. Developed as a component
+3. Handled errors with API outage  
+4. Developed as a component based architecture
 5. Container page containing 3 instances of the same component
 6. Support Android L+ (Android Browser), iPhone 5+
 7. Support IE11+ or latest Chrome or Safari
