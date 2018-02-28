@@ -23,7 +23,7 @@ export class MaterialModule {}
     HttpClientModule
     ],
     
-  declarations: [ AppComponent,ConverterComponent],
+  declarations: [ AppComponent,ConverterComponent,OnlyNumber],
   bootstrap: [ConverterComponent,AppComponent],
   providers: []
 })

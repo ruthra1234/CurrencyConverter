@@ -25,9 +25,9 @@ export class CurrencyService {
             .catch(this.errorHandler);
     }
 
-    private errorHandler(error: any): Promise<any> {
+     private errorHandler(error: any): Promise<any> {
         // log error to console
-        console.error('There was an error', error);
+        console.error('There is no Internet connection', error);
         return Promise.reject(error.message || error);
     }
 }

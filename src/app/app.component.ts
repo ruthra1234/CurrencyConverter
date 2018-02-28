@@ -53,38 +53,36 @@ export class AppComponent implements OnInit {
     }
 
     public calculate(reverse) {
+      
         this.handleErrors();
         
      
         if (this.toCurrency === this.fromCurrency) {
-          if (reverse) {
-            this.fromAmount = this.toAmount;
-            }
-            else{
+         
              this.toAmount=this.fromAmount;
-            }
-          
+  
         }
         
        else{
+       
         if (!this.error) {
+          
             if (reverse) {
-         
-              this.fromAmount = String(Math.round( Number(this.toAmount) / this.fromRates[this.toCurrency] * 100) / 100);
-               
+              this.toAmount =String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
+            
              if(this.toAmount==null){
                  this.toAmount='';
                   this.fromAmount='';
                }
-              
-               
+                 
             } else {
       
           if(this.fromAmount!=''){
-           this.toAmount =String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
+              this.toAmount =String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
                          
              }
              else{
+             
                  this.fromAmount='';
                   this.toAmount='';
              
