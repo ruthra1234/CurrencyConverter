@@ -6,7 +6,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { CurrencyComponent } from './currency.component';
 import { RootComponent } from './root.component';
 import { DecimalValidation } from './validation.directive';
-
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 

@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { CurrencyService } from './currency.service';
-import { OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { CurrencyService} from './currency.service';
+import { OnInit} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 
 @Component({
     selector: 'app-currency-converter',
     templateUrl: './currency.component.html',
-    providers: [ CurrencyService ]
+    providers: [CurrencyService]
 })
 
 export class CurrencyComponent implements OnInit {
@@ -17,8 +17,8 @@ export class CurrencyComponent implements OnInit {
     toAmount: string = '';
     fromCurrency: string = null;
     toCurrency: string = null;
-    showDisclaimer:boolean = false;
-    rates: Array<any> = [];
+    showDisclaimer: boolean = false;
+    rates: Array < any > = [];
     fromRates: Object = {};
     constructor(private dataService: CurrencyService) {}
 
@@ -31,15 +31,18 @@ export class CurrencyComponent implements OnInit {
 
             if (response.rates) {
                 if (initial) {
-               
-                    const items: Array<any> = this.parseData(response.rates);
-                    items.push({id: 'EUR', value: 1});
+
+                    const items: Array < any > = this.parseData(response.rates);
+                    items.push({
+                        id: 'EUR',
+                        value: 1
+                    });
                     this.rates = items;
                     this.fromCurrency = this.rates[0].id;
                     this.toCurrency = this.rates[1].id;
                     this.convert(false, false);
                 }
- 
+
                 this.fromRates = response.rates;
 
                 this.calculate(reverse);
@@ -53,48 +56,45 @@ export class CurrencyComponent implements OnInit {
     }
 
     public calculate(reverse) {
-      
+
         this.handleErrors();
-        
-     
+
+
         if (this.toCurrency === this.fromCurrency) {
-         
-             this.toAmount=this.fromAmount;
-  
-        }
-        
-       else{
-       
-        if (!this.error) {
-          
-            if (reverse) {
-              this.toAmount =String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
-            
-             if(this.toAmount==null){
-                 this.toAmount='';
-                  this.fromAmount='';
-               }
-                 
-            } else {
-      
-          if(this.fromAmount!=''){
-              this.toAmount =String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
-                         
-             }
-             else{
-             
-                 this.fromAmount='';
-                  this.toAmount='';
-             
-             }
-                 
+
+            this.toAmount = this.fromAmount;
+
+        } else {
+
+            if (!this.error) {
+
+                if (reverse) {
+                    this.toAmount = String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
+
+                    if (this.toAmount == null) {
+                        this.toAmount = '';
+                        this.fromAmount = '';
+                    }
+
+                } else {
+
+                    if (this.fromAmount != '') {
+                        this.toAmount = String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
+
+                    } else {
+
+                        this.fromAmount = '';
+                        this.toAmount = '';
+
+                    }
+
+                }
             }
-        }
         }
     }
 
     private parseData(data) {
-        const arr: Array<any> = [];
+        const arr: Array < any > = [];
 
         for (const key in data) {
             if (key) {
@@ -102,10 +102,10 @@ export class CurrencyComponent implements OnInit {
                     id: key,
                     value: data[key]
                 };
-                 if(key=='USD'||key=='CAD'|| key=='EUR'){
-                arr.push(obj);
+                if (key == 'USD' || key == 'CAD' || key == 'EUR') {
+                    arr.push(obj);
                 }
-                
+
             }
         }
 
@@ -119,8 +119,8 @@ export class CurrencyComponent implements OnInit {
             this.error = 'Please set currency';
             return;
         }
-       
+
     }
-    
-    
+
+
 }

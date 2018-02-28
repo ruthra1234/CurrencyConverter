@@ -1,17 +1,20 @@
-# Currency Converter POC
+# Currency Converter POC with Fixer API
 
-## Features:
+A Simple Currency Converter using the JSON fixer API
+
+## Technologies Stack:
 
 - Angular 5
 - ES6
 - Typescript
+- Sales force lightning design system
 - Webpack
 
-#### Development setup
+#### Installation
 
 1. `Download and install latest version Node-v8.9.4 and NPM Package manager`
 
-2. `Checkout "final branch" from  (git clone https://github.com/ruthra1234/currency-converter.git)`
+2. `Checkout from  (git clone https://github.com/ruthra1234/CurrencyConverter.git)`
 
 3. `npm install`
 
@@ -19,10 +22,3 @@
 
 5. `http://localhost:4200/`
 
-## Mobile View :
-
-![Mobile View](./src/assets/mobile.png)
-
-## Browser :
-
-![Browser](./src/assets/desk.png)
