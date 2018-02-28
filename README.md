@@ -1,6 +1,6 @@
 # Currency Converter POC with Fixer API
 
-A Simple Currency Converter using the JSON fixer API
+A Simple Currency Converter using the JSON fixer API. Support for CAD,USD,EUR curriencies. 
 
 ## Technologies Stack:
 
@@ -9,6 +9,7 @@ A Simple Currency Converter using the JSON fixer API
 - Typescript
 - Sales force lightning design system
 - Webpack
+- NPM
 
 #### Installation
 
@@ -21,4 +22,18 @@ A Simple Currency Converter using the JSON fixer API
 4. `npm start`
 
 5. `http://localhost:4200/`
+
+
+### Features Included
+
+```
+1. Custom decimal validation
+2. Responsive design
+3. API outage error message
+4. Developed as a component
+5. Container page containing 3 instances of the same component
+6. Support Android L+ (Android Browser), iPhone 5+
+7. Support IE11+ or latest Chrome or Safari
+
+```
 
