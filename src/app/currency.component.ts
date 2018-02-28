@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { CurrencyService } from './app.service';
+import { CurrencyService } from './currency.service';
 import { OnInit } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 
 @Component({
     selector: 'app-currency-converter',
-    templateUrl: './app.component.html',
+    templateUrl: './currency.component.html',
     providers: [ CurrencyService ]
 })
 
-export class AppComponent implements OnInit {
+export class CurrencyComponent implements OnInit {
 
     title: string = 'Currency converter';
     error: any = null;

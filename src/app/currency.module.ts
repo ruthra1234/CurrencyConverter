@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { ConverterComponent } from './converter.component';
-import { OnlyNumber } from './onlynumber.directive';
+import { CurrencyComponent } from './currency.component';
+import { RootComponent } from './root.component';
+import { OnlyNumber } from './validation.directive';
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -23,10 +23,10 @@ export class MaterialModule {}
     HttpClientModule
     ],
     
-  declarations: [ AppComponent,ConverterComponent,OnlyNumber],
-  bootstrap: [ConverterComponent,AppComponent],
+  declarations: [ CurrencyComponent,RootComponent,OnlyNumber],
+  bootstrap: [RootComponent,CurrencyComponent],
   providers: []
 })
 
-export class AppModule {}
+export class CurrencyModule {}
 

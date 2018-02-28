@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 	<app-currency-converter></app-currency-converter>
   `
 })
-export class ConverterComponent {
+export class RootComponent {
 }
