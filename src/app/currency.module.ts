@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import { CurrencyComponent } from './currency.component';
 import { RootComponent } from './root.component';
-import { OnlyNumber } from './validation.directive';
+import { DecimalValidation } from './validation.directive';
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -23,7 +23,7 @@ export class MaterialModule {}
     HttpClientModule
     ],
     
-  declarations: [ CurrencyComponent,RootComponent,OnlyNumber],
+  declarations: [ CurrencyComponent,RootComponent,DecimalValidation],
   bootstrap: [RootComponent,CurrencyComponent],
   providers: []
 })

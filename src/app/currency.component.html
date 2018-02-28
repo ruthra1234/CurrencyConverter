@@ -13,7 +13,7 @@
             <div class="slds-grid slds-grid_vertical-align-start">
                 <div class="slds-form-element">
                     <div class="slds-form-element__control">
-                        <input id="from-amount" OnlyNumber="true"  placeholder="0.00" class="slds-input" [(ngModel)]="fromAmount" (ngModelChange)="calculate(false)" />
+                        <input id="from-amount" decimalValidation="true"  placeholder="0.00" class="slds-input" [(ngModel)]="fromAmount" (ngModelChange)="calculate(false)" />
                     </div>
                 </div>
                 <div class="slds-form-element slds-m-left--medium">
@@ -32,7 +32,7 @@
             <div class="slds-grid slds-grid_vertical-align-start">
                 <div class="slds-form-element">
                     <div class="slds-form-element__control">
-                        <input id="to-amount" OnlyNumber="true" placeholder="0.00" disabled class="slds-input disabled-text" [(ngModel)]="toAmount" />
+                        <input id="to-amount" decimalValidation="true" placeholder="0.00" disabled class="slds-input disabled-text" [(ngModel)]="toAmount" />
                     </div>
                 </div>
                 <div class="slds-form-element slds-m-left--medium">

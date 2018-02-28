@@ -2,11 +2,11 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[OnlyNumber]'
+  selector: '[decimalValidation]'
 })
 
 
-export class OnlyNumber {
+export class DecimalValidation {
     // Allow decimal numbers. The \. is only allowed once to occur
     private regex: RegExp = new RegExp(/^[0-9]+(\.[0-9]*){0,1}$/g);
 
