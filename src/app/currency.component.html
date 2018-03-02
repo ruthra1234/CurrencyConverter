@@ -13,13 +13,13 @@
             <div class="slds-grid slds-grid_vertical-align-start">
                 <div class="slds-form-element">
                     <div class="slds-form-element__control">
-                        <input id="from-amount" decimalValidation="true"  placeholder="0.00" class="slds-input" [(ngModel)]="fromAmount" (ngModelChange)="calculate(false)" />
+                        <input id="from-amount" decimalValidation="true"  placeholder="0.00" class="slds-input" [(ngModel)]="fromAmount" (ngModelChange)="calculate()" />
                     </div>
                 </div>
                 <div class="slds-form-element slds-m-left--medium">
                     <div class="slds-form-element__control">
                         <div class="slds-select_container">
-                            <select id="fromCurrency" class="slds-select slds-theme--shade currency-dropdown-width" [(ngModel)]="fromCurrency"  (ngModelChange)="convert(false, false)"> 
+                            <select id="fromCurrency" class="slds-select slds-theme--shade currency-dropdown-width" [(ngModel)]="fromCurrency"  (ngModelChange)="convert(false)"> 
                                 <option *ngFor="let rate of rates" [value]="rate.id">{{ rate.id }}</option>
                             </select>
                         </div>
@@ -32,13 +32,13 @@
             <div class="slds-grid slds-grid_vertical-align-start">
                 <div class="slds-form-element">
                     <div class="slds-form-element__control">
-                        <input id="to-amount" decimalValidation="true" placeholder="0.00" disabled class="slds-input disabled-text" [(ngModel)]="toAmount" />
+                        <input id="to-amount" placeholder="0.00" disabled class="slds-input disabled-text" [(ngModel)]="toAmount" />
                     </div>
                 </div>
                 <div class="slds-form-element slds-m-left--medium">
                     <div class="slds-form-element__control">
                         <div class="slds-select_container">
-                            <select id="toCurrency" class="slds-select slds-theme--shade currency-dropdown-width" [(ngModel)]="toCurrency"  (ngModelChange)="calculate(true)"> 
+                            <select id="toCurrency" class="slds-select slds-theme--shade currency-dropdown-width" [(ngModel)]="toCurrency"  (ngModelChange)="calculate()"> 
                                 <option *ngFor="let rate of rates" [value]="rate.id">{{ rate.id }}</option>
                             </select>
                         </div>

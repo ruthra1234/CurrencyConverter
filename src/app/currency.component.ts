@@ -1,7 +1,8 @@
-import { Component} from '@angular/core';
-import { CurrencyService} from './currency.service';
-import { OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
+
+import { CurrencyService} from './currency.service';
+
 
 @Component({
     selector: 'app-currency-converter',
@@ -23,13 +24,15 @@ export class CurrencyComponent implements OnInit {
     constructor(private dataService: CurrencyService) {}
 
     ngOnInit() {
-        this.convert(false, true);
+        this.convert(true);
     }
 
-    public convert(reverse, initial) {
+    public convert(initial) {
+       
         this.dataService.getRates(this.fromCurrency).then(response => {
 
             if (response.rates) {
+               
                 if (initial) {
 
                     const items: Array < any > = this.parseData(response.rates);
@@ -40,12 +43,12 @@ export class CurrencyComponent implements OnInit {
                     this.rates = items;
                     this.fromCurrency = this.rates[0].id;
                     this.toCurrency = this.rates[1].id;
-                    this.convert(false, false);
+                    this.convert(false);
                 }
 
                 this.fromRates = response.rates;
 
-                this.calculate(reverse);
+                this.calculate();
 
             } else {
                 this.error = 'Unable to get data from API';
@@ -55,30 +58,19 @@ export class CurrencyComponent implements OnInit {
         });
     }
 
-    public calculate(reverse) {
+    public calculate() {
 
         this.handleErrors();
-
-
+        
         if (this.toCurrency === this.fromCurrency) {
 
             this.toAmount = this.fromAmount;
 
         } else {
 
-            if (!this.error) {
-
-                if (reverse) {
-                    this.toAmount = String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
-
-                    if (this.toAmount == null) {
-                        this.toAmount = '';
-                        this.fromAmount = '';
-                    }
-
-                } else {
-
-                    if (this.fromAmount != '') {
+            if (!this.error) {   
+             
+                 if (this.fromAmount != '') {
                         this.toAmount = String(Math.round(Number(this.fromAmount) * this.fromRates[this.toCurrency] * 100) / 100);
 
                     } else {
@@ -86,9 +78,7 @@ export class CurrencyComponent implements OnInit {
                         this.fromAmount = '';
                         this.toAmount = '';
 
-                    }
-
-                }
+                    } 
             }
         }
     }

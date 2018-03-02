@@ -1,4 +1,4 @@
-# Currency Converter POC with Fixer API
+# Currency Converter Angular 5
 
 A Simple Currency Converter using the JSON fixer API. Support for CAD,USD,EUR curriencies. 
 
@@ -9,7 +9,7 @@ A Simple Currency Converter using the JSON fixer API. Support for CAD,USD,EUR cu
 - Typescript
 - Sales force lightning design system
 - Webpack
-- NPM
+
 
 #### Installation
 
@@ -21,15 +21,15 @@ A Simple Currency Converter using the JSON fixer API. Support for CAD,USD,EUR cu
 
 4. `npm start`
 
-5. `Execute URL : http://localhost:4200/`
+5. `Execute the URL : http://localhost:4200/`
 
 
 ### Features Included
 
 ```
-1. Custom decimal validation
-2. Responsive design
-3. Handled errors with API outage  
+1. Included custom decimal validation
+2. Responsive design support
+3. Handled API outage errors
 4. Developed as a component based architecture
 5. Container page containing 3 instances of the same component
 6. Support Android L+ (Android Browser), iPhone 5+

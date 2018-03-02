@@ -5,10 +5,12 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class CurrencyService {
+
     private apiUrl = 'http://api.fixer.io/latest';
     constructor(private http: Http) {}
 
     getRates(base): Promise<any> {
+      
         let url: string;
 
         // Check if base is set and customize API url accordingly
@@ -26,8 +28,7 @@ export class CurrencyService {
     }
 
      private errorHandler(error: any): Promise<any> {
-        // log error to console
-        console.error('There is no Internet connection', error);
+    
         return Promise.reject(error.message || error);
     }
 }
